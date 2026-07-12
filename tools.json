@@ -1,0 +1,51 @@
+[
+    {
+        "id": "pdf",
+        "name": "ابزارهای PDF",
+        "description": "تبدیل، ادغام، فشرده‌سازی و ویرایش PDF",
+        "keywords": [
+            "pdf",
+            "پی دی اف",
+            "تبدیل pdf",
+            "ادغام pdf",
+            "compress pdf"
+        ],
+        "url": "/tools/pdf"
+    },
+    {
+        "id": "remove-background",
+        "name": "حذف پس‌زمینه عکس",
+        "description": "حذف خودکار پس‌زمینه تصاویر",
+        "keywords": [
+            "حذف پس زمینه",
+            "پاک کردن بک گراند",
+            "remove background",
+            "عکس"
+        ],
+        "url": "/tools/remove-background"
+    },
+    {
+        "id": "password-generator",
+        "name": "Password Generator",
+        "description": "ساخت رمز عبور قوی",
+        "keywords": [
+            "رمز",
+            "پسورد",
+            "password",
+            "password generator"
+        ],
+        "url": "/tools/password-generator"
+    },
+    {
+        "id": "translator",
+        "name": "مترجم",
+        "description": "ترجمه متن بین زبان‌های مختلف",
+        "keywords": [
+            "ترجمه",
+            "مترجم",
+            "translate",
+            "translation"
+        ],
+        "url": "/tools/translator"
+    }
+]
