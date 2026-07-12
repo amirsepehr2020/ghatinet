@@ -3,32 +3,31 @@
 
 <head>
 
-    <!-- ========================================= -->
-    <!-- Basic Meta -->
-    <!-- ========================================= -->
-
+    <!-- Meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- ========================================= -->
     <!-- SEO -->
-    <!-- ========================================= -->
-
     <title>Spix | هر ابزاری، فقط بپرس.</title>
 
     <meta name="description"
-        content="Spix یک دستیار هوشمند برای پیدا کردن ابزارهای آنلاین است. فقط نیازت را بنویس و ابزار مناسب را پیدا کن.">
+        content="Spix یک پلتفرم هوشمند برای پیدا کردن ابزارهای آنلاین با کمک هوش مصنوعی است.">
 
     <meta name="keywords"
         content="Spix, AI, Online Tools, ابزار آنلاین, هوش مصنوعی">
 
-    <meta name="author" content="Spix Team">
+    <meta name="author" content="Spix">
 
     <meta name="theme-color" content="#0B0B0F">
 
-    <!-- ========================================= -->
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Spix">
+    <meta property="og:description"
+        content="Ask. Find. Done.">
+    <meta property="og:type" content="website">
+
     <!-- Fonts -->
-    <!-- ========================================= -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -36,18 +35,14 @@
           href="https://fonts.gstatic.com"
           crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap"
           rel="stylesheet">
 
-    <!-- ========================================= -->
     <!-- Favicon -->
-    <!-- ========================================= -->
 
     <link rel="icon" href="favicon.ico">
 
-    <!-- ========================================= -->
     <!-- CSS -->
-    <!-- ========================================= -->
 
     <link rel="stylesheet" href="assets/css/variables.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -59,150 +54,302 @@
 
 <body>
 
-<div id="app">
+<div class="app">
 
-    <!-- Background Effects -->
+    <!-- Background -->
+
     <div class="background">
-        <div class="blur blur-1"></div>
-        <div class="blur blur-2"></div>
+
+        <div class="background__blur background__blur--purple"></div>
+
+        <div class="background__blur background__blur--blue"></div>
+
+        <div class="background__grid"></div>
+
     </div>
 
     <!-- Header -->
+
     <header class="header">
 
-        <div class="logo">
+        <div class="header__container">
 
-            <img src="assets/logo/logo.svg" alt="Spix Logo">
+            <a
+               href="/"
+               class="header__brand">
 
-            <span>Spix</span>
+                <img
+                     src="assets/logo/logo.svg"
+                     alt="Spix Logo"
+                     class="header__logo">
 
-        </div>
+                <span class="header__title">
 
-        <nav class="navigation">
+                    Spix
 
-            <a href="#">خانه</a>
+                </span>
 
-            <a href="#">ابزارها</a>
+            </a>
 
-            <a href="#">درباره</a>
+            <nav class="header__nav">
 
-        </nav>
+                <a href="/">خانه</a>
 
-    </header>
+                <a href="/tools">ابزارها</a>
 
-    <!-- Main -->
+                <a href="/about">درباره</a>
 
-    <section class="hero-content">
+                <a href="/contact">تماس</a>
 
-    <span class="badge">
-        ✨ AI Powered
-    </span>
+            </nav>
 
-    <h1>
+            <button
+                    class="header__menu"
+                    aria-label="Open Menu">
 
-        هر ابزاری،
-        فقط بپرس.
-
-    </h1>
-
-    <p>
-
-        Spix با کمک هوش مصنوعی،
-        ابزار مناسب را در چند ثانیه برایت پیدا می‌کند.
-
-    </p>
-
-</section>
-<section class="search-area">
-
-    <div class="chat-box">
-
-        <input
-            type="text"
-            placeholder="مثلاً: عکس رو PDF کن">
-
-        <button>
-
-            ➜
-
-        </button>
-
-    </div>
-
-</section>
-
-<section class="quick-actions">
-
-    <button>🖼 حذف پس‌زمینه</button>
-
-    <button>📄 PDF</button>
-
-    <button>🔒 رمزساز</button>
-
-    <button>🎨 انتخاب رنگ</button>
-
-    <button>🌍 مترجم</button>
-
-</section>
-<section class="popular-tools">
-
-    <h2>
-
-        محبوب‌ترین ابزارها
-
-    </h2>
-
-</section>
-        <h1>
-
-            هر ابزاری،
-            فقط بپرس.
-
-        </h1>
-
-        <p>
-
-            Spix با کمک هوش مصنوعی،
-            سریع‌ترین ابزار مناسب را برای نیازت پیدا می‌کند.
-
-        </p>
-
-        <!-- Chat -->
-
-        <div class="chat-box">
-
-            <input
-                   type="text"
-                   placeholder="چه ابزاری لازم داری؟">
-
-            <button>
-
-                ارسال
+                ☰
 
             </button>
 
         </div>
 
-        <!-- Suggestions -->
+    </header>
 
-        <div class="suggestions">
+    <!-- Main -->
 
-            <button>📄 PDF</button>
+    <main class="main">
 
-            <button>🖼 عکس</button>
+        <!-- Hero -->
 
-            <button>🎮 بازی</button>
+        <section class="hero">
 
-            <button>🔒 رمز</button>
+            <div class="hero__badge">
 
-            <button>🎨 رنگ</button>
+                ✨ AI Powered Platform
 
-        </div>
+            </div>
 
-    </main>
+            <h1 class="hero__title">
 
-</div>
+                هر ابزاری،
+                فقط بپرس.
 
-</body>
+            </h1>
 
-</html>
+            <p class="hero__description">
+
+                Spix با کمک هوش مصنوعی،
+                مناسب‌ترین ابزار آنلاین را در چند ثانیه برایت پیدا می‌کند.
+
+            </p>
+
+            <!-- Search -->
+
+            <form class="search">
+
+                <button
+                        class="search__attach"
+                        type="button">
+
+                    📎
+
+                </button>
+
+                <input
+                       type="text"
+                       class="search__input"
+                       placeholder="مثلاً عکس را PDF کن...">
+
+                <button
+                        class="search__voice"
+                        type="button">
+
+                    🎤
+
+                </button>
+
+                <button
+                        class="search__submit"
+                        type="submit">
+
+                    ➜
+
+                </button>
+
+            </form>
+
+        </section>
+                <!-- Quick Actions -->
+
+        <section class="quick-actions">
+
+            <button class="quick-actions__item">
+                🖼
+                <span>حذف پس‌زمینه</span>
+            </button>
+
+            <button class="quick-actions__item">
+                📄
+                <span>تبدیل PDF</span>
+            </button>
+
+            <button class="quick-actions__item">
+                🎨
+                <span>انتخاب رنگ</span>
+            </button>
+
+            <button class="quick-actions__item">
+                🔒
+                <span>رمزساز</span>
+            </button>
+
+            <button class="quick-actions__item">
+                🌐
+                <span>مترجم</span>
+            </button>
+
+            <button class="quick-actions__item">
+                🎬
+                <span>ویرایش ویدیو</span>
+            </button>
+
+        </section>
+
+        <!-- Popular Tools -->
+
+        <section class="tools">
+
+            <div class="section-title">
+
+                <h2>محبوب‌ترین ابزارها</h2>
+
+                <p>ابزارهایی که کاربران بیشتر از همه استفاده می‌کنند.</p>
+
+            </div>
+
+            <div class="tools__grid">
+
+                <article class="tool-card">
+
+                    <div class="tool-card__icon">🖼</div>
+
+                    <h3 class="tool-card__title">
+                        حذف پس‌زمینه عکس
+                    </h3>
+
+                    <p class="tool-card__description">
+                        حذف خودکار پس‌زمینه تصاویر با هوش مصنوعی.
+                    </p>
+
+                    <a href="/tools/remove-background"
+                       class="tool-card__button">
+
+                        استفاده
+
+                    </a>
+
+                </article>
+
+                <article class="tool-card">
+
+                    <div class="tool-card__icon">📄</div>
+
+                    <h3 class="tool-card__title">
+                        PDF Tools
+                    </h3>
+
+                    <p class="tool-card__description">
+                        تبدیل، ادغام و فشرده‌سازی فایل‌های PDF.
+                    </p>
+
+                    <a href="/tools/pdf"
+                       class="tool-card__button">
+
+                        استفاده
+
+                    </a>
+
+                </article>
+
+                <article class="tool-card">
+
+                    <div class="tool-card__icon">🔐</div>
+
+                    <h3 class="tool-card__title">
+                        Password Generator
+                    </h3>
+
+                    <p class="tool-card__description">
+                        ساخت رمزهای بسیار قوی و امن.
+                    </p>
+
+                    <a href="/tools/password-generator"
+                       class="tool-card__button">
+
+                        استفاده
+
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- Categories -->
+
+        <section class="categories">
+
+            <div class="section-title">
+
+                <h2>دسته‌بندی‌ها</h2>
+
+            </div>
+
+            <div class="categories__grid">
+
+                <a href="/tools/image">🖼 تصاویر</a>
+
+                <a href="/tools/pdf">📄 PDF</a>
+
+                <a href="/tools/video">🎥 ویدیو</a>
+
+                <a href="/tools/audio">🎧 صدا</a>
+
+                <a href="/tools/ai">🤖 هوش مصنوعی</a>
+
+                <a href="/tools/security">🔐 امنیت</a>
+
+                <a href="/tools/developer">💻 برنامه‌نویسی</a>
+
+                <a href="/tools/all">➕ همه ابزارها</a>
+
+            </div>
+
+        </section>
+
+        <!-- Features -->
+
+        <section class="features">
+
+            <div class="section-title">
+
+                <h2>چرا Spix؟</h2>
+
+            </div>
+
+            <div class="features__grid">
+
+                <article class="feature">
+
+                    <span>⚡</span>
+
+                    <h3>سریع</h3>
+
+                    <p>
+                        پیدا کردن ابزار مناسب تنها در چند ثانیه.
+                    </p>
+
+                </article>
+
+ 
