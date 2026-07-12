@@ -1,0 +1,315 @@
+/* ==========================================================
+   Layout
+   ========================================================== */
+
+/* =========================
+   App
+   ========================= */
+
+#app{
+
+    position:relative;
+
+    width:100%;
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+}
+
+
+/* =========================
+   Background
+   ========================= */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-1;
+
+}
+
+.blur{
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.35;
+
+}
+
+.blur-1{
+
+    top:-150px;
+
+    right:-150px;
+
+    background:var(--color-primary);
+
+}
+
+.blur-2{
+
+    bottom:-180px;
+
+    left:-180px;
+
+    background:var(--color-secondary);
+
+}
+
+
+/* =========================
+   Header
+   ========================= */
+
+.header{
+
+    width:100%;
+
+    max-width:var(--container);
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:24px;
+
+}
+
+
+/* =========================
+   Logo
+   ========================= */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:1.3rem;
+
+    font-weight:700;
+
+}
+
+.logo img{
+
+    width:42px;
+
+}
+
+
+/* =========================
+   Navigation
+   ========================= */
+
+.navigation{
+
+    display:flex;
+
+    gap:28px;
+
+}
+
+.navigation a{
+
+    color:var(--color-text-secondary);
+
+    transition:var(--transition);
+
+}
+
+.navigation a:hover{
+
+    color:var(--color-text);
+
+}
+
+
+/* =========================
+   Hero
+   ========================= */
+
+.hero{
+
+    min-height:calc(100vh - 90px);
+
+    max-width:900px;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:24px;
+
+}
+
+
+/* =========================
+   Heading
+   ========================= */
+
+.hero h1{
+
+    font-size:clamp(2.5rem,6vw,4.5rem);
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+
+}
+
+
+/* =========================
+   Description
+   ========================= */
+
+.hero p{
+
+    max-width:650px;
+
+    color:var(--color-text-secondary);
+
+    font-size:1.1rem;
+
+    line-height:1.9;
+
+}
+
+
+/* =========================
+   Chat Box
+   ========================= */
+
+.chat-box{
+
+    width:100%;
+
+    margin-top:50px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid var(--color-border);
+
+    border-radius:22px;
+
+    backdrop-filter:blur(25px);
+
+    display:flex;
+
+    align-items:center;
+
+    padding:10px;
+
+}
+
+
+.chat-box input{
+
+    flex:1;
+
+    color:var(--color-text);
+
+    padding:18px;
+
+    font-size:1rem;
+
+}
+
+
+.chat-box button{
+
+    background:linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+    );
+
+    color:white;
+
+    padding:16px 28px;
+
+    border-radius:18px;
+
+    transition:var(--transition);
+
+}
+
+
+.chat-box button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+/* =========================
+   Suggestions
+   ========================= */
+
+.suggestions{
+
+    margin-top:28px;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:14px;
+
+}
+
+.suggestions button{
+
+    padding:14px 18px;
+
+    background:var(--color-surface);
+
+    border:1px solid var(--color-border);
+
+    border-radius:999px;
+
+    color:var(--color-text);
+
+    transition:var(--transition);
+
+}
+
+.suggestions button:hover{
+
+    background:var(--color-surface-light);
+
+    transform:translateY(-3px);
+
+}
