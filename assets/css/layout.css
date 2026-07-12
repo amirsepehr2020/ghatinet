@@ -734,4 +734,97 @@
     font-size:var(--fs-14);
 
 }
-   
+
+/* ===============================
+   Chat
+================================ */
+
+.chat{
+
+    width:min(92%,900px);
+
+    margin:40px auto 80px;
+
+}
+
+.chat__messages{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.chat__empty{
+
+    text-align:center;
+
+    padding:70px 30px;
+
+    color:var(--text-secondary);
+
+}
+
+.chat__empty-icon{
+
+    font-size:52px;
+
+    margin-bottom:18px;
+
+}
+
+.message{
+
+    display:flex;
+
+}
+
+.message--user{
+
+    justify-content:flex-end;
+
+}
+
+.message--ai{
+
+    justify-content:flex-start;
+
+}
+
+.message__bubble{
+
+    max-width:75%;
+
+    padding:18px 22px;
+
+    border-radius:18px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    line-height:1.9;
+
+}
+
+.message--user .message__bubble{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:#fff;
+
+}
+
+.message__bubble a{
+
+    color:var(--accent);
+
+    font-weight:600;
+
+}
