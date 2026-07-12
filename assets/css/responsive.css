@@ -1,0 +1,131 @@
+/* ==========================================================
+   Responsive
+   ========================================================== */
+
+
+/* =========================
+   Large Desktop
+   ========================= */
+
+@media (max-width:1200px){
+
+    .header{
+
+        padding:20px;
+
+    }
+
+}
+
+
+/* =========================
+   Tablet
+   ========================= */
+
+@media (max-width:992px){
+
+    .hero h1{
+
+        font-size:3rem;
+
+    }
+
+}
+
+
+/* =========================
+   Mobile
+   ========================= */
+
+@media (max-width:768px){
+
+    .header{
+
+        flex-direction:column;
+
+        gap:24px;
+
+    }
+
+    .navigation{
+
+        gap:18px;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+    .hero{
+
+        min-height:auto;
+
+        padding:80px 20px;
+
+    }
+
+    .hero h1{
+
+        font-size:2.3rem;
+
+    }
+
+    .hero p{
+
+        font-size:1rem;
+
+    }
+
+    .chat-box{
+
+        flex-direction:column;
+
+        padding:12px;
+
+        gap:12px;
+
+    }
+
+    .chat-box input{
+
+        width:100%;
+
+    }
+
+    .chat-box button{
+
+        width:100%;
+
+    }
+
+}
+
+
+/* =========================
+   Small Mobile
+   ========================= */
+
+@media (max-width:480px){
+
+    .hero h1{
+
+        font-size:2rem;
+
+    }
+
+    .suggestions{
+
+        gap:10px;
+
+    }
+
+    .suggestions button{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+}
