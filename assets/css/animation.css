@@ -1,14 +1,19 @@
 /* ==========================================================
-   Animations
+   Spix Animations v2
    ========================================================== */
 
-@keyframes fadeUp {
+
+/* ==========================================
+   Keyframes
+========================================== */
+
+@keyframes fadeUp{
 
     from{
 
         opacity:0;
 
-        transform:translateY(25px);
+        transform:translateY(35px);
 
     }
 
@@ -22,7 +27,25 @@
 
 }
 
-@keyframes float {
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+@keyframes float{
 
     0%{
 
@@ -32,7 +55,7 @@
 
     50%{
 
-        transform:translateY(-10px);
+        transform:translateY(-18px);
 
     }
 
@@ -44,7 +67,37 @@
 
 }
 
-@keyframes pulse {
+
+@keyframes glow{
+
+    0%{
+
+        opacity:.25;
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        opacity:.45;
+
+        transform:scale(1.08);
+
+    }
+
+    100%{
+
+        opacity:.25;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+@keyframes pulse{
 
     0%{
 
@@ -54,7 +107,7 @@
 
     50%{
 
-        transform:scale(1.04);
+        transform:scale(1.05);
 
     }
 
@@ -66,20 +119,172 @@
 
 }
 
-.hero{
 
-    animation:fadeUp .8s ease;
+@keyframes rotateGradient{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
 
 }
 
-.blur{
 
-    animation:float 8s ease-in-out infinite;
+/* ==========================================
+   Background
+========================================== */
+
+.background__blur{
+
+    animation:glow 10s ease-in-out infinite;
 
 }
 
-.chat-box{
+.background__blur--blue{
 
-    animation:fadeUp 1s ease;
+    animation-delay:2s;
+
+}
+
+
+/* ==========================================
+   Hero
+========================================== */
+
+.hero__badge{
+
+    animation:fadeIn .8s ease;
+
+}
+
+.hero__title{
+
+    animation:fadeUp .9s ease;
+
+}
+
+.hero__description{
+
+    animation:fadeUp 1.1s ease;
+
+}
+
+.search{
+
+    animation:fadeUp 1.3s ease;
+
+}
+
+.quick-actions{
+
+    animation:fadeUp 1.5s ease;
+
+}
+
+
+/* ==========================================
+   Hover
+========================================== */
+
+.tool-card{
+
+    transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease;
+
+}
+
+.tool-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.feature{
+
+    transition:all .3s ease;
+
+}
+
+.feature:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.categories__grid a{
+
+    transition:all .25s ease;
+
+}
+
+.categories__grid a:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.search__submit{
+
+    transition:all .25s ease;
+
+}
+
+.search__submit:hover{
+
+    transform:scale(1.08);
+
+}
+
+.search__submit:active{
+
+    transform:scale(.94);
+
+}
+
+.quick-actions__item{
+
+    transition:all .25s ease;
+
+}
+
+.quick-actions__item:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.header__brand{
+
+    transition:.25s ease;
+
+}
+
+.header__brand:hover{
+
+    transform:scale(1.03);
+
+}
+
+
+/* ==========================================
+   Smooth
+========================================== */
+
+button,
+a,
+.tool-card,
+.feature,
+.categories__grid a{
+
+    will-change:transform;
 
 }
