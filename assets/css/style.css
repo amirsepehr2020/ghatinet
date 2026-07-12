@@ -1,1 +1,178 @@
+/* ==========================================================
+   Spix Base Styles
+   ========================================================== */
 
+
+/* =========================
+   Reset
+   ========================= */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/* =========================
+   HTML
+   ========================= */
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+/* =========================
+   Body
+   ========================= */
+
+body{
+
+    background:var(--color-background);
+
+    color:var(--color-text);
+
+    font-family:var(--font-fa);
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    text-rendering:optimizeLegibility;
+
+    -webkit-font-smoothing:antialiased;
+
+}
+
+
+/* =========================
+   Images
+   ========================= */
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+
+/* =========================
+   Links
+   ========================= */
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+
+/* =========================
+   Buttons
+   ========================= */
+
+button{
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    font:inherit;
+
+}
+
+
+/* =========================
+   Inputs
+   ========================= */
+
+input,
+textarea{
+
+    border:none;
+
+    outline:none;
+
+    background:none;
+
+    font:inherit;
+
+}
+
+
+/* =========================
+   Lists
+   ========================= */
+
+ul,
+ol{
+
+    list-style:none;
+
+}
+
+
+/* =========================
+   App
+   ========================= */
+
+#app{
+
+    width:100%;
+
+    min-height:100vh;
+
+}
+
+
+/* =========================
+   Selection
+   ========================= */
+
+::selection{
+
+    background:var(--color-primary);
+
+    color:white;
+
+}
+
+
+/* =========================
+   Scrollbar
+   ========================= */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:var(--color-background);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--color-surface-light);
+
+    border-radius:999px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--color-primary);
+
+}
