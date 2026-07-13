@@ -21,6 +21,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+for tool in tools:
+
+    tool["url"] = config.BASE_URL + tool["path"]
 
 class ChatRequest(BaseModel):
     message: str
