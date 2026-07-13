@@ -2,6 +2,9 @@ from openai import OpenAI
 
 from config import config
 
+import json
+
+
 
 client = OpenAI(
     api_key=config.GROQ_API_KEY,
@@ -31,5 +34,6 @@ def ask_ai(system_prompt: str, user_message: str) -> str:
         max_tokens=config.MAX_TOKENS
 
     )
-
-    return response.choices[0].message.content
+    return json.loads(
+    response.choices[0].message.content
+    )
