@@ -7,38 +7,58 @@ Spix Chat
 "use strict";
 
 const messages = document.querySelector(".chat__messages");
-
 const searchForm = document.querySelector(".search");
-
 const input = document.querySelector(".search__input");
 
 
-searchForm.addEventListener("submit",(event)=>{
+searchForm.addEventListener("submit", async (event) => {
 
     event.preventDefault();
 
     const text = input.value.trim();
 
-    if(text==="") return;
+    if (!text) return;
 
     addUserMessage(text);
 
-    setTimeout(()=>{
+    input.value = "";
 
-        addAiMessage(text);
+    showTyping();
 
-    },600);
+    try {
 
-    input.value="";
+        const response = await sendMessage(text);
+
+        removeTyping();
+
+        if (response.success) {
+
+            addAiMessage(response.answer);
+
+        } else {
+
+            addAiMessage("❌ مشکلی در دریافت پاسخ به وجود آمد.");
+
+        }
+
+    } catch (error) {
+
+        removeTyping();
+
+        addAiMessage("❌ ارتباط با سرور برقرار نشد.");
+
+        console.error(error);
+
+    }
 
 });
 
 
-function removeEmpty(){
+function removeEmpty() {
 
-    const empty=document.querySelector(".chat__empty");
+    const empty = document.querySelector(".chat__empty");
 
-    if(empty){
+    if (empty) {
 
         empty.remove();
 
@@ -47,21 +67,21 @@ function removeEmpty(){
 }
 
 
-function addUserMessage(message){
+function addUserMessage(message) {
 
     removeEmpty();
 
-    messages.insertAdjacentHTML("beforeend",`
+    messages.insertAdjacentHTML("beforeend", `
 
-    <div class="message message--user">
+        <div class="message message--user">
 
-        <div class="message__bubble">
+            <div class="message__bubble">
 
-            ${message}
+                ${message}
+
+            </div>
 
         </div>
-
-    </div>
 
     `);
 
@@ -70,82 +90,19 @@ function addUserMessage(message){
 }
 
 
-function addAiMessage(message){
+function addAiMessage(message) {
 
-    let answer=`
-        در حال حاضر این ابزار هنوز اضافه نشده.
-        <br><br>
-        شما نوشتید:
-        <b>${message}</b>
-    `;
+    messages.insertAdjacentHTML("beforeend", `
 
-    const lower=message.toLowerCase();
+        <div class="message message--ai">
 
-    if(lower.includes("pdf")){
+            <div class="message__bubble">
 
-        answer=`
+                ${message}
 
-        ابزار مناسب پیدا شد.
-
-        <br><br>
-
-        <a href="/tools/pdf">
-
-            📄 ابزار PDF
-
-        </a>
-
-        `;
-
-    }
-
-    if(lower.includes("رمز")){
-
-        answer=`
-
-        ابزار مناسب پیدا شد.
-
-        <br><br>
-
-        <a href="/tools/password-generator">
-
-            🔐 Password Generator
-
-        </a>
-
-        `;
-
-    }
-
-    if(lower.includes("عکس")){
-
-        answer=`
-
-        ابزار مناسب پیدا شد.
-
-        <br><br>
-
-        <a href="/tools/image">
-
-            🖼 ابزارهای تصویر
-
-        </a>
-
-        `;
-
-    }
-
-    messages.insertAdjacentHTML("beforeend",`
-
-    <div class="message message--ai">
-
-        <div class="message__bubble">
-
-            ${answer}
+            </div>
 
         </div>
-
-    </div>
 
     `);
 
@@ -154,8 +111,44 @@ function addAiMessage(message){
 }
 
 
-function scrollBottom(){
+function showTyping() {
 
-    messages.scrollTop=messages.scrollHeight;
+    removeEmpty();
+
+    messages.insertAdjacentHTML("beforeend", `
+
+        <div class="message message--ai" id="typing-message">
+
+            <div class="message__bubble">
+
+                ⏳ در حال جستجو...
+
+            </div>
+
+        </div>
+
+    `);
+
+    scrollBottom();
+
+}
+
+
+function removeTyping() {
+
+    const typing = document.getElementById("typing-message");
+
+    if (typing) {
+
+        typing.remove();
+
+    }
+
+}
+
+
+function scrollBottom() {
+
+    messages.scrollTop = messages.scrollHeight;
 
 }
