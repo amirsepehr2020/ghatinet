@@ -25,7 +25,16 @@ app.add_middleware(
 class ChatRequest(BaseModel):
     message: str
 
+def load_system_prompt():
 
+    with open(
+        "prompts/system.txt",
+        "r",
+        encoding="utf-8"
+    ) as file:
+
+        return file.read()
+        
 @app.get("/")
 async def home():
 
