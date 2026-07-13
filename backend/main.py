@@ -5,7 +5,7 @@ from schemas.chat import ChatRequest, ChatResponse
 from ai import ask_ai
 from tools import load_tools
 from tools import find_tools
-
+from prompts import load_prompt
 
 app = FastAPI(
     title="Spix API",
@@ -60,9 +60,9 @@ async def chat(data: ChatRequest):
 
     tools = find_tools(data.message)
 
-    system_prompt = load_system_prompt().replace(
-    "{tools}",
-    str(tools)
+    system_prompt = load_prompt(
+    "system",
+    tools=tools
     )
     
     answer = ask_ai(
