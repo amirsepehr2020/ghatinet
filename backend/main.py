@@ -82,6 +82,9 @@ Internal tools:
     )
 
     return {
-        "success": True,
-        "answer": answer
+
+    "success": True,
+
+    "data": answer
+
     }
