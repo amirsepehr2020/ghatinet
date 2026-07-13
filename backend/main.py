@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from ai import ask_ai
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
