@@ -12,12 +12,27 @@ def load_tools():
 
             return json.load(file)
 
-    except FileNotFoundError:
+    except Exception:
 
         return []
 
-    except Exception as error:
 
-        print(error)
+def find_tools(user_message: str):
 
-        return []
+    user_message = user_message.lower()
+
+    matched = []
+
+    tools = load_tools()
+
+    for tool in tools:
+
+        for keyword in tool.get("keywords", []):
+
+            if keyword.lower() in user_message:
+
+                matched.append(tool)
+
+                break
+
+    return matched
