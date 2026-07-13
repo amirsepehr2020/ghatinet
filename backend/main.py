@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from schemas.chat import ChatRequest, ChatResponse
 
 from ai import ask_ai
 from tools import load_tools
