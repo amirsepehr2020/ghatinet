@@ -18,3 +18,4 @@ class Config:
 
 
 config = Config()
+BASE_URL = "https://ghatinet.ir"
