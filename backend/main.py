@@ -4,6 +4,7 @@ from pydantic import BaseModel
 
 from ai import ask_ai
 from tools import load_tools
+from tools import find_tools
 
 
 app = FastAPI(
@@ -45,7 +46,7 @@ async def health():
 @app.post("/chat")
 async def chat(data: ChatRequest):
 
-    tools = load_tools()
+    tools = find_tools(data.message)
 
     system_prompt = f"""
 You are Spix AI.
