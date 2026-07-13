@@ -77,3 +77,5 @@ async def chat(data: ChatRequest):
     "data": answer
 
     }
+
+@app.post("/chat", response_model=ChatResponse)
