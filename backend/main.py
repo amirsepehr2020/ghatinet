@@ -57,35 +57,11 @@ async def chat(data: ChatRequest):
 
     tools = find_tools(data.message)
 
-    system_prompt = f"""
-You are Spix AI.
-
-Your only job is to recommend tools.
-
-You MUST return ONLY valid JSON.
-
-Response format:
-
-{{
-    "type":"internal",
-    "title":"Tool Name",
-    "description":"Short description",
-    "url":"https://ghatinet.ir/tools/example"
-}}
-
-If there is no internal tool:
-
-{{
-    "type":"external",
-    "title":"Website Name",
-    "description":"Short description",
-    "url":"https://example.com"
-}}
-
-Internal tools:
-
-{tools}
-"""
+    system_prompt = load_system_prompt().replace(
+    "{tools}",
+    str(tools)
+    )
+    
     answer = ask_ai(
         system_prompt=system_prompt,
         user_message=data.message
