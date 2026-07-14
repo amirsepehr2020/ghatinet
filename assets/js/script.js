@@ -17,88 +17,21 @@ const menuButton = document.querySelector(".header__menu");
 
 const navigation = document.querySelector(".header__nav");
 
-const searchForm = document.querySelector(".search");
-
-const searchInput = document.querySelector(".search__input");
-
-const searchButton = document.querySelector(".search__submit");
-
-
-/* ==========================================
-   Header Shadow
-========================================== */
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 30) {
-
-        header.style.background = "rgba(9,9,11,.82)";
-
-        header.style.borderBottom = "1px solid rgba(255,255,255,.08)";
-
-    } else {
-
-        header.style.background = "rgba(9,9,11,.55)";
-
-        header.style.borderBottom = "1px solid rgba(255,255,255,.06)";
-
-    }
-
-});
-
-
-/* ==========================================
-   Mobile Menu
-========================================== */
-
-if(menuButton){
-
-    menuButton.addEventListener("click",()=>{
-
-        navigation.classList.toggle("show-menu");
-
-    });
-
-}
-
-
-/* ==========================================
-   Search
-========================================== */
-
-if(searchForm){
-
-    searchForm.addEventListener("submit",(event)=>{
-
-        event.preventDefault();
-
-        const value = searchInput.value.trim();
-
-        if(value === ""){
-
-            searchInput.focus();
-
-            return;
-
-        }
-
-        console.log(value);
-
-    });
-
-}
-
-
 /* ==========================================
    Auto Focus
 ========================================== */
 
-window.addEventListener("load",()=>{
+window.addEventListener("load", () => {
 
-    searchInput.focus();
+    const input = document.querySelector(".search__input");
+
+    if (input) {
+
+        input.focus();
+
+    }
 
 });
-
 
 /* ==========================================
    Enter Animation
@@ -115,18 +48,23 @@ document.querySelectorAll(".tool-card").forEach((card,index)=>{
    Quick Actions
 ========================================== */
 
-document.querySelectorAll(".quick-actions__item").forEach(button=>{
+document.querySelectorAll(".quick-actions__item").forEach(button => {
 
-    button.addEventListener("click",()=>{
+    button.addEventListener("click", () => {
 
-        searchInput.value = button.innerText;
+        const input = document.querySelector(".search__input");
 
-        searchInput.focus();
+        if (input) {
+
+            input.value = button.innerText;
+
+            input.focus();
+
+        }
 
     });
 
 });
-
 
 /* ==========================================
    Theme Ready
