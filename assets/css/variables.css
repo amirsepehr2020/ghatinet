@@ -1,141 +1,49 @@
-/* ==========================================================
-   Spix Design System v2
-   ========================================================== */
-
 :root{
 
-    /* ===============================
-       Brand
-    =============================== */
+    /* Brand */
 
-    --primary:#7C3AED;
-    --primary-light:#A855F7;
-    --secondary:#2563EB;
-    --accent:#22D3EE;
+    --primary:#7C5CFF;
+    --primary-light:#9E86FF;
+    --secondary:#38BDF8;
 
-    /* ===============================
-       Background
-    =============================== */
+    /* Background */
 
     --background:#09090B;
-    --surface:#111114;
-    --surface-2:#18181B;
-    --surface-3:#222228;
+    --surface:#11131A;
+    --card:#181B24;
 
-    /* ===============================
-       Border
-    =============================== */
-
-    --border:#2A2A32;
-    --border-light:#393944;
-
-    /* ===============================
-       Text
-    =============================== */
+    /* Text */
 
     --text:#FFFFFF;
-    --text-secondary:#B3B3BE;
-    --text-muted:#7D7D88;
+    --text-light:#B8BCC8;
+    --text-muted:#7B8091;
 
-    /* ===============================
-       Status
-    =============================== */
+    /* Border */
 
-    --success:#22C55E;
-    --warning:#FACC15;
-    --danger:#EF4444;
+    --border:rgba(255,255,255,.08);
 
-    /* ===============================
-       Fonts
-    =============================== */
+    /* Radius */
 
-    --font-fa:"Vazirmatn",sans-serif;
-    --font-en:"Inter",sans-serif;
-
-    /* ===============================
-       Font Size
-    =============================== */
-
-    --fs-12:.75rem;
-    --fs-14:.875rem;
-    --fs-16:1rem;
-    --fs-18:1.125rem;
-    --fs-20:1.25rem;
-    --fs-24:1.5rem;
-    --fs-32:2rem;
-    --fs-40:2.5rem;
-    --fs-56:3.5rem;
-
-    /* ===============================
-       Font Weight
-    =============================== */
-
-    --fw-regular:400;
-    --fw-medium:500;
-    --fw-semibold:600;
-    --fw-bold:700;
-    --fw-black:800;
-
-    /* ===============================
-       Radius
-    =============================== */
-
-    --radius-xs:8px;
     --radius-sm:12px;
     --radius-md:18px;
-    --radius-lg:24px;
-    --radius-xl:32px;
-    --radius-full:999px;
+    --radius-lg:28px;
+    --radius-xl:36px;
 
-    /* ===============================
-       Spacing
-    =============================== */
+    /* Shadow */
 
-    --space-4:4px;
-    --space-8:8px;
-    --space-12:12px;
-    --space-16:16px;
-    --space-20:20px;
-    --space-24:24px;
-    --space-32:32px;
-    --space-40:40px;
-    --space-48:48px;
-    --space-64:64px;
-    --space-96:96px;
+    --shadow:
+        0 20px 60px rgba(0,0,0,.45);
 
-    /* ===============================
-       Width
-    =============================== */
+    /* Blur */
+
+    --blur:blur(22px);
+
+    /* Transition */
+
+    --transition:.28s ease;
+
+    /* Width */
 
     --container:1280px;
-    --container-small:980px;
-
-    /* ===============================
-       Blur
-    =============================== */
-
-    --blur:blur(30px);
-
-    /* ===============================
-       Shadow
-    =============================== */
-
-    --shadow-sm:0 8px 20px rgba(0,0,0,.15);
-
-    --shadow-md:0 20px 50px rgba(0,0,0,.25);
-
-    --shadow-lg:0 40px 80px rgba(0,0,0,.35);
-
-    --shadow-glow:0 0 40px rgba(124,58,237,.35);
-
-    /* ===============================
-       Transition
-    =============================== */
-
-    --transition-fast:.2s ease;
-
-    --transition:.3s ease;
-
-    --transition-slow:.5s ease;
 
 }
