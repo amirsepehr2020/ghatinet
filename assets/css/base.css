@@ -1,0 +1,141 @@
+/*
+====================================
+Spix UI v2
+Base
+====================================
+*/
+
+*,
+*::before,
+*::after{
+
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    min-height:100vh;
+
+    background:var(--color-bg);
+
+    color:var(--color-text);
+
+    font-family:var(--font-main);
+
+    overflow-x:hidden;
+
+    -webkit-font-smoothing:antialiased;
+
+    text-rendering:optimizeLegibility;
+
+}
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at 15% 10%,rgba(124,92,255,.20),transparent 35%),
+
+    radial-gradient(circle at 85% 90%,rgba(56,189,248,.15),transparent 35%),
+
+    radial-gradient(circle at 50% 40%,rgba(255,255,255,.03),transparent 45%);
+
+    z-index:-2;
+
+}
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+svg{
+
+    display:block;
+
+}
+
+button{
+
+    border:none;
+
+    outline:none;
+
+    background:none;
+
+    font:inherit;
+
+    cursor:pointer;
+
+}
+
+input{
+
+    border:none;
+
+    outline:none;
+
+    background:none;
+
+    font:inherit;
+
+    color:inherit;
+
+}
+
+textarea{
+
+    border:none;
+
+    outline:none;
+
+    resize:none;
+
+    background:none;
+
+    font:inherit;
+
+    color:inherit;
+
+}
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+::selection{
+
+    background:var(--color-primary);
+
+    color:#fff;
+
+}
