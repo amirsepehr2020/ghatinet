@@ -33,13 +33,27 @@ searchForm.addEventListener("submit", async (event) => {
 
         if (response.success) {
 
-            addAiMessage(response.answer);
+    const tool = response.data;
 
-        } else {
+    addAiMessage(`
+        <h3>${tool.title}</h3>
 
-            addAiMessage("❌ مشکلی در دریافت پاسخ به وجود آمد.");
+        <p>${tool.description}</p>
 
-        }
+        <br>
+
+        <a href="${tool.url}" target="_blank">
+
+            🚀 ورود به ابزار
+
+        </a>
+    `);
+
+} else {
+
+    addAiMessage("❌ مشکلی در دریافت پاسخ به وجود آمد.");
+
+}
 
     } catch (error) {
 
