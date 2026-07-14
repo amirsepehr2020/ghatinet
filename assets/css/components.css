@@ -1033,3 +1033,112 @@ Scrollbar
     background:var(--color-primary);
 
 }
+
+
+/*
+====================================
+Tool Button
+====================================
+*/
+
+.tool-button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:14px;
+
+    padding:16px 26px;
+
+    margin-top:28px;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        135deg,
+        #7C5CFF,
+        #9B7BFF
+    );
+
+    color:#fff;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    background .25s ease;
+
+    box-shadow:
+    0 10px 35px rgba(124,92,255,.35);
+
+}
+
+.tool-button::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    transform:translateX(-140%);
+
+}
+
+.tool-button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 18px 50px rgba(124,92,255,.55);
+
+}
+
+.tool-button:hover::before{
+
+    animation:shine .8s ease;
+
+}
+
+.tool-button:active{
+
+    transform:scale(.97);
+
+}
+
+.tool-button__icon{
+
+    font-size:1.2rem;
+
+}
+
+.tool-button__arrow{
+
+    transition:.25s;
+
+}
+
+.tool-button:hover .tool-button__arrow{
+
+    transform:translateX(6px);
+
+}
