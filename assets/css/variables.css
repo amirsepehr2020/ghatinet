@@ -1,49 +1,87 @@
+/*
+====================================
+Spix UI v2
+Variables
+====================================
+*/
+
 :root{
 
-    /* Brand */
+    /* ========= Colors ========= */
 
-    --primary:#7C5CFF;
-    --primary-light:#9E86FF;
-    --secondary:#38BDF8;
+    --color-primary:#7C5CFF;
+    --color-primary-light:#9A82FF;
+    --color-primary-dark:#5C3DF0;
 
-    /* Background */
+    --color-secondary:#38BDF8;
 
-    --background:#09090B;
-    --surface:#11131A;
-    --card:#181B24;
+    --color-success:#22C55E;
+    --color-warning:#F59E0B;
+    --color-danger:#EF4444;
 
-    /* Text */
+    --color-bg:#09090B;
+    --color-surface:#101218;
+    --color-card:#161A22;
 
-    --text:#FFFFFF;
-    --text-light:#B8BCC8;
-    --text-muted:#7B8091;
+    --color-text:#FFFFFF;
+    --color-text-light:#C8CDD8;
+    --color-text-muted:#9098A8;
 
-    /* Border */
+    --color-border:rgba(255,255,255,.08);
 
-    --border:rgba(255,255,255,.08);
+    /* ========= Glass ========= */
 
-    /* Radius */
+    --glass-bg:rgba(255,255,255,.05);
+    --glass-border:rgba(255,255,255,.08);
 
+    /* ========= Radius ========= */
+
+    --radius-xs:8px;
     --radius-sm:12px;
     --radius-md:18px;
-    --radius-lg:28px;
-    --radius-xl:36px;
+    --radius-lg:24px;
+    --radius-xl:32px;
+    --radius-full:999px;
 
-    /* Shadow */
+    /* ========= Shadow ========= */
 
-    --shadow:
-        0 20px 60px rgba(0,0,0,.45);
+    --shadow-sm:
+        0 6px 20px rgba(0,0,0,.15);
 
-    /* Blur */
+    --shadow-md:
+        0 14px 40px rgba(0,0,0,.25);
 
-    --blur:blur(22px);
+    --shadow-lg:
+        0 24px 80px rgba(0,0,0,.45);
 
-    /* Transition */
+    --shadow-primary:
+        0 0 45px rgba(124,92,255,.30);
+
+    /* ========= Blur ========= */
+
+    --blur:22px;
+
+    /* ========= Width ========= */
+
+    --container:1240px;
+
+    /* ========= Header ========= */
+
+    --header-height:76px;
+
+    /* ========= Transition ========= */
+
+    --transition-fast:.18s ease;
 
     --transition:.28s ease;
 
-    /* Width */
+    --transition-slow:.45s ease;
 
-    --container:1280px;
+    /* ========= Font ========= */
+
+    --font-main:
+        "Vazirmatn",
+        "Inter",
+        sans-serif;
 
 }
