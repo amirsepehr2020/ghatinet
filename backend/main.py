@@ -1,11 +1,12 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+
 from schemas.chat import ChatRequest, ChatResponse
 
 from ai import ask_ai
-from tools import load_tools
 from tools import find_tools
 from prompts import load_prompt
+
 
 app = FastAPI(
     title="Spix API",
@@ -21,23 +22,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-for tool in tools:
 
-    tool["url"] = config.BASE_URL + tool["path"]
-
-class ChatRequest(BaseModel):
-    message: str
-
-def load_system_prompt():
-
-    with open(
-        "prompts/system.txt",
-        "r",
-        encoding="utf-8"
-    ) as file:
-
-        return file.read()
-        
 @app.get("/")
 async def home():
 
@@ -55,27 +40,22 @@ async def health():
     }
 
 
-@app.post("/chat")
+@app.post("/chat", response_model=ChatResponse)
 async def chat(data: ChatRequest):
 
     tools = find_tools(data.message)
 
     system_prompt = load_prompt(
-    "system",
-    tools=tools
+        "system",
+        tools=tools
     )
-    
+
     answer = ask_ai(
         system_prompt=system_prompt,
         user_message=data.message
     )
 
     return {
-
-    "success": True,
-
-    "data": answer
-
+        "success": True,
+        "data": answer
     }
-
-@app.post("/chat", response_model=ChatResponse)
