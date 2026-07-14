@@ -1,0 +1,246 @@
+/*
+====================================
+Spix UI v2
+Chat
+====================================
+*/
+
+.chat{
+
+    padding-top:40px;
+
+}
+
+.chat__window{
+
+    width:100%;
+
+    max-width:950px;
+
+    margin:0 auto;
+
+    background:rgba(17,20,28,.72);
+
+    backdrop-filter:blur(20px);
+
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:32px;
+
+    overflow:hidden;
+
+    box-shadow:
+
+    0 25px 70px rgba(0,0,0,.35);
+
+}
+
+.chat__messages{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:26px;
+
+    padding:36px;
+
+    min-height:420px;
+
+}
+
+.chat__welcome{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+}
+
+.chat__message{
+
+    display:flex;
+
+    gap:18px;
+
+    animation:fadeUp .35s ease;
+
+}
+
+.chat__message--user{
+
+    flex-direction:row-reverse;
+
+}
+
+.chat__avatar{
+
+    width:52px;
+
+    height:52px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        135deg,
+        var(--color-primary),
+        var(--color-primary-light)
+    );
+
+    color:#fff;
+
+    font-size:1.2rem;
+
+    font-weight:700;
+
+}
+
+.chat__message--user .chat__avatar{
+
+    background:#252A36;
+
+}
+
+.chat__bubble{
+
+    max-width:720px;
+
+    padding:22px 24px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    line-height:2;
+
+}
+
+.chat__message--user .chat__bubble{
+
+    background:rgba(124,92,255,.14);
+
+    border-color:rgba(124,92,255,.35);
+
+}
+
+.chat__bubble h3{
+
+    margin-bottom:12px;
+
+    font-size:1.1rem;
+
+}
+
+.chat__bubble p{
+
+    color:var(--color-text-light);
+
+}
+
+.chat__bubble a{
+
+    color:#8EC5FF;
+
+    font-weight:600;
+
+}
+
+.chat__bubble ul{
+
+    padding-right:20px;
+
+}
+
+.chat__bubble li{
+
+    margin:8px 0;
+
+}
+
+.chat__bubble code{
+
+    padding:4px 8px;
+
+    border-radius:8px;
+
+    background:#11151E;
+
+    font-family:monospace;
+
+}
+
+.chat__bubble pre{
+
+    margin-top:18px;
+
+    padding:18px;
+
+    overflow:auto;
+
+    border-radius:16px;
+
+    background:#0D1117;
+
+}
+
+.chat__bubble blockquote{
+
+    margin:18px 0;
+
+    padding-right:16px;
+
+    border-right:4px solid var(--color-primary);
+
+    color:var(--color-text-muted);
+
+}
+
+.chat__typing{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+}
+
+.chat__typing span{
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:var(--color-primary);
+
+    animation:typing 1.2s infinite;
+
+}
+
+.chat__typing span:nth-child(2){
+
+    animation-delay:.2s;
+
+}
+
+.chat__typing span:nth-child(3){
+
+    animation-delay:.4s;
+
+}
