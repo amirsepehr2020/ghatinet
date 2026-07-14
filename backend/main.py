@@ -5,7 +5,6 @@ from schemas.chat import ChatRequest, ChatResponse
 
 from ai import ask_ai
 from tools import find_tools
-from prompts import load_prompt
 
 
 app = FastAPI(
@@ -45,10 +44,41 @@ async def chat(data: ChatRequest):
 
     tools = find_tools(data.message)
 
-    system_prompt = load_prompt(
-        "system",
-        tools=tools
-    )
+    system_prompt = f"""
+You are Spix AI.
+
+Your job is to recommend the best online tools.
+
+Rules:
+
+- First check the internal tools list.
+- If a matching internal tool exists, ALWAYS recommend it.
+- If no internal tool exists, recommend the best trusted website.
+- Never invent URLs.
+- Return ONLY valid JSON.
+
+Response format:
+
+{{
+    "type":"internal",
+    "title":"Tool Name",
+    "description":"Short description",
+    "url":"https://ghatinet.ir/tools/example"
+}}
+
+or
+
+{{
+    "type":"external",
+    "title":"Website Name",
+    "description":"Short description",
+    "url":"https://example.com"
+}}
+
+Internal tools:
+
+{tools}
+"""
 
     answer = ask_ai(
         system_prompt=system_prompt,
