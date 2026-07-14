@@ -25,37 +25,31 @@ searchForm.addEventListener("submit", async (event) => {
 
     showTyping();
 
-    try {
+   try {
 
-        const response = await sendMessage(text);
+    const response = await sendMessage(text);
 
-        removeTyping();
-
-        if (response.success) {
+    removeTyping();
 
     if (response.success) {
 
-    addAiMessage(response.answer);
+        addAiMessage(response.answer);
 
-} else {
+    } else {
 
-    addAiMessage("❌ مشکلی در دریافت پاسخ به وجود آمد.");
-
-}
-
-
-
-    } catch (error) {
-
-        removeTyping();
-
-        addAiMessage("❌ ارتباط با سرور برقرار نشد.");
-
-        console.error(error);
+        addAiMessage("❌ مشکلی در دریافت پاسخ به وجود آمد.");
 
     }
 
-});
+} catch (error) {
+
+    removeTyping();
+
+    addAiMessage("❌ ارتباط با سرور برقرار نشد.");
+
+    console.error(error);
+
+}
 
 
 function removeEmpty() {
