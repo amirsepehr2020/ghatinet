@@ -10,47 +10,52 @@ const messages = document.querySelector(".chat__messages");
 const searchForm = document.querySelector(".search");
 const input = document.querySelector(".search__input");
 
+if (searchForm && input && messages) {
 
-searchForm.addEventListener("submit", async (event) => {
+    searchForm.addEventListener("submit", async (event) => {
 
-    event.preventDefault();
+        event.preventDefault();
 
-    const text = input.value.trim();
+        const text = input.value.trim();
 
-    if (!text) return;
+        if (!text) return;
 
-    addUserMessage(text);
+        addUserMessage(text);
 
-    input.value = "";
+        input.value = "";
+        input.focus();
 
-    showTyping();
+        showTyping();
 
-   try {
+        try {
 
-    const response = await sendMessage(text);
+            const response = await sendMessage(text);
 
-    removeTyping();
+            removeTyping();
 
-    if (response.success) {
+            if (response && response.success) {
 
-        addAiMessage(response.answer);
+                addAiMessage(response.answer);
 
-    } else {
+            } else {
 
-        addAiMessage("❌ مشکلی در دریافت پاسخ به وجود آمد.");
+                addAiMessage("❌ مشکلی در دریافت پاسخ به وجود آمد.");
 
-    }
+            }
 
-} catch (error) {
+        } catch (error) {
 
-    removeTyping();
+            removeTyping();
 
-    addAiMessage("❌ ارتباط با سرور برقرار نشد.");
+            addAiMessage("❌ ارتباط با سرور برقرار نشد.");
 
-    console.error(error);
+            console.error(error);
+
+        }
+
+    });
 
 }
-
 
 function removeEmpty() {
 
@@ -64,73 +69,62 @@ function removeEmpty() {
 
 }
 
-
 function addUserMessage(message) {
 
     removeEmpty();
 
-    messages.insertAdjacentHTML("beforeend", `
-
+    messages.insertAdjacentHTML(
+        "beforeend",
+        `
         <div class="message message--user">
-
             <div class="message__bubble">
-
-                ${message}
-
+                ${escapeHtml(message)}
             </div>
-
         </div>
-
-    `);
+        `
+    );
 
     scrollBottom();
 
 }
-
 
 function addAiMessage(message) {
 
-    messages.insertAdjacentHTML("beforeend", `
-
+    messages.insertAdjacentHTML(
+        "beforeend",
+        `
         <div class="message message--ai">
-
             <div class="message__bubble">
-
                 ${message}
-
             </div>
-
         </div>
-
-    `);
+        `
+    );
 
     scrollBottom();
 
 }
-
 
 function showTyping() {
 
     removeEmpty();
 
-    messages.insertAdjacentHTML("beforeend", `
+    removeTyping();
 
+    messages.insertAdjacentHTML(
+        "beforeend",
+        `
         <div class="message message--ai" id="typing-message">
-
             <div class="message__bubble">
-
-                ⏳ در حال جستجو...
-
+                ⏳ در حال فکر کردن...
             </div>
-
         </div>
-
-    `);
+        `
+    );
 
     scrollBottom();
 
 }
-
 
 function removeTyping() {
 
@@ -144,9 +138,21 @@ function removeTyping() {
 
 }
 
-
 function scrollBottom() {
 
-    messages.scrollTop = messages.scrollHeight;
+    messages.scrollTo({
+        top: messages.scrollHeight,
+        behavior: "smooth"
+    });
+
+}
+
+function escapeHtml(text) {
+
+    const div = document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
 
 }
