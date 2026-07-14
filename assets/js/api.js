@@ -6,7 +6,7 @@ Spix API
 
 "use strict";
 
-const API_URL = "https://spix-uhsb.onrender.com/chat";
+const API_URL = "https://yy.sepehr2sodoury.workers.dev";
 
 async function sendMessage(message) {
 
