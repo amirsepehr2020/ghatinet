@@ -104,18 +104,31 @@ function addUserMessage(message) {
 
 function addAiMessage(message) {
 
-    messages.insertAdjacentHTML(
-        "beforeend",
-        `
-        <div class="message message--ai">
+    messages.insertAdjacentHTML("beforeend", `
+
+        <div class="chat__message chat__message--ai">
+
             <div class="message__bubble">
+
                 ${message}
+
             </div>
+
         </div>
-        `
+
+    `);
+
+    const lastMessage = messages.querySelector(
+        ".chat__message--ai:last-child"
     );
 
-    scrollBottom();
+    lastMessage.scrollIntoView({
+
+        behavior: "smooth",
+
+        block: "center"
+
+    });
 
 }
 
