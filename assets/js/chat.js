@@ -33,15 +33,29 @@ if (searchForm && input && messages) {
 
             removeTyping();
 
-            if (response && response.success) {
+            if (response.success) {
 
-                addAiMessage(response.answer);
+    let tool;
 
-            } else {
+    try {
 
-                addAiMessage("❌ مشکلی در دریافت پاسخ به وجود آمد.");
+        tool = JSON.parse(response.answer);
 
-            }
+    } catch {
+
+        addAiMessage(response.answer);
+
+        return;
+
+    }
+
+    addToolCard(tool);
+
+} else {
+
+    addAiMessage("❌ مشکلی در دریافت پاسخ به وجود آمد.");
+
+}
 
         } catch (error) {
 
@@ -102,6 +116,52 @@ function addAiMessage(message) {
     );
 
     scrollBottom();
+
+}
+
+function addToolCard(tool) {
+
+    const html = `
+
+    <div class="tool-result">
+
+        <div class="tool-result__icon">
+
+            🌐
+
+        </div>
+
+        <div class="tool-result__content">
+
+            <h3>
+
+                ${tool.title}
+
+            </h3>
+
+            <p>
+
+                ${tool.description}
+
+            </p>
+
+            <a
+                href="${tool.url}"
+                target="_blank"
+                class="tool-result__button"
+            >
+
+                🚀 ورود به ابزار
+
+            </a>
+
+        </div>
+
+    </div>
+
+    `;
+
+    addAiMessage(html);
 
 }
 
