@@ -69,13 +69,7 @@ Components
 
 }
 
-.logo img{
-
-    width:38px;
-
-    height:38px;
-
-}
+.logo img{width: 150px; margin-top:15px}
 
 /* ==========================
    Navigation
